@@ -1,0 +1,14 @@
+<h1>Editing <%= @list.title %> </h1>
+
+
+<%= form_for @list do |f| %>
+  <%= f.label :task %>
+  <%= f.text_field :title, required: true %>
+  <br />
+  <%= f.label :complete %>
+  <%= f.check_box :complete %>
+  <br />
+  <%= f.submit 'Update Task' %>
+<% end %>
+
+<%= link_to 'Cancel', list_path(@list) %>

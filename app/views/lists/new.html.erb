@@ -1,0 +1,14 @@
+<h1>New Task</h1>
+
+
+<%= form_for @list do |f| %>
+  <%= f.label :task %>
+  <%= f.text_field :title, required: true %>  
+  <br />
+  <%= f.label :complete %>
+  <%= f.check_box :complete %>
+  <%= f.submit 'Add New Task' %>
+<% end %>
+
+
+<%= link_to 'Back to All Tasks', lists_path %>
