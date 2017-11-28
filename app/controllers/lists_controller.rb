@@ -1,7 +1,7 @@
 class ListsController < ApplicationController
  
+ 
   def index
-
     @lists = List.all
   end
 
@@ -40,6 +40,10 @@ class ListsController < ApplicationController
     end
   end
 
+  def completed
+    @list = List.find(params[:id])
+  end
+
   def destroy
     List.find(params[:id]).destroy
     redirect_to lists_path
@@ -48,7 +52,7 @@ class ListsController < ApplicationController
   private
   #strong parameters
   def list_params
-    params.require(:list).permit(:title, :complete)
+    params.require(:list).permit(:title, :complete, :priority, :description)
   end
 end
 

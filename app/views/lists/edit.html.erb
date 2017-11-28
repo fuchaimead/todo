@@ -8,6 +8,11 @@
   <%= f.label :complete %>
   <%= f.check_box :complete %>
   <br />
+ <%= f.select :priority, options_for_select(%w[not-important important very-important]) %>
+  <br />
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <br />
   <%= f.submit 'Update Task' %>
 <% end %>
 
